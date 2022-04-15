@@ -1,8 +1,15 @@
 public class Movie {
-    public static void MovieExperience() {
-        Welcome.welcome();
-        String name = Name.getName();
-        System.out.println(name);
-        Seating.getSeating();
+    private String movieName;
+
+    Movie(String movieName) {
+        this.movieName = movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    public String getMovieName() {
+        return movieName;
     }
 }

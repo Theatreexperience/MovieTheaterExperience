@@ -9,7 +9,6 @@ public class Seating {
         int randomRow;
         int randomColumn;
 
-
         char[][] movieSeating = new char[NUM_ROW][NUM_COLUMN];
         Scanner input = new Scanner(System.in);
 
@@ -23,16 +22,10 @@ public class Seating {
         movieSeating[randomRow][randomColumn] = 'X';
 
         System.out.println();
-        System.out.println("Here are the available seats.");
-        System.out.println("O means available. X means taken.");
+        System.out.println("SEATING IS ON A FIRST-COME, FIRST-SERVE BASIS");
+        System.out.println("O means seat WORKS. X means seat IS BROKEN.");
         System.out.println();
 
-
-
-
-
-
-
         System.out.println("    | SCREEN |   ");
 
         for (int i = 0; i < movieSeating.length; i++) {
@@ -41,49 +34,5 @@ public class Seating {
             }
             System.out.println();
         }
-
-
-        // For Loop based on number of tickets
-
-        do {
-
-             System.out.println();
-             System.out.print("What row would you like? (Enter a number 1-6) ");
-             row = input.nextInt();
-
-             while (row < 1 || row > 6) {
-                System.out.println("Sorry, that is not a valid row.");
-                System.out.println("Please enter a row number 1-6");
-                row = input.nextInt();
-             }
-
-             System.out.print("What column would you like? (Enter a number 1-10) ");
-             column = input.nextInt();
-
-             while (column < 1 || column > 10) {
-                 System.out.println("Sorry, that is not a valid column.");
-                 System.out.println("Please enter a column number 1-10");
-                 column = input.nextInt();
-             }
-            if (movieSeating[row - 1][column - 1] == 'O')
-                break;
-
-            System.out.println("Sorry, that seat is taken");
-        }   while (true);
-
-
-
-        movieSeating[row - 1][column - 1] = 'X';
-
-        System.out.println("    | SCREEN |   ");
-
-        for (int i = 0; i < movieSeating.length; i++) {
-            for (int j = 0; j < movieSeating[i].length; j++) {
-                System.out.print(movieSeating[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.println("Your seat is row " + row + " and column " + column);
     }
 }
