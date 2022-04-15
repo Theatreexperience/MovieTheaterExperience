@@ -1,10 +1,15 @@
 import java.util.Scanner;
+import java.time.LocalDate;
 
-public class MovieSelection {
-    public static String chooseMovie() {
+public class MovieInformation {
+    public static String selectMovie() {
         int movieChoice;
         String movie;
 
+        System.out.println();
+
+        System.out.println("All movies will be shown on " + java.time.LocalDate.now() + " at 10:00 PM");
+        System.out.println();
         while (true) {
             System.out.println("Select a movie: ");
             System.out.println("1 - Thor: Ragnorak");
@@ -18,27 +23,22 @@ public class MovieSelection {
 
             switch (movieChoice) {
                 case 1:
-                    System.out.println("You chose Thor: Ragnorak");
                     movie = "Thor: Ragnorak";
                     break;
 
                 case 2:
-                    System.out.println("You chose Captain America: The Winter Soldier");
                     movie = "Captain America: The Winter Soldier";
                     break;
 
                 case 3:
-                    System.out.println("You chose Avengers: Endgame");
                     movie = "Avengers: Endgame";
                     break;
 
                 case 4:
-                    System.out.println("You chose Black Panther");
                     movie = "Black Panther";
                     break;
 
                 case 5:
-                    System.out.println("You chose Captain America: Civil War");
                     movie = "Captain America: Civil War";
                     break;
 
@@ -51,5 +51,6 @@ public class MovieSelection {
         }
 
         return movie;
+
     }
 }

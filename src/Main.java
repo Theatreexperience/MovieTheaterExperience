@@ -1,9 +1,10 @@
 // Garret Wong
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] arg) {
-        Seating.getSeating();
-        // Information.getInformation();
-
+        Welcome.welcome();
+        Receipt.getReceipt();
     }
 }
