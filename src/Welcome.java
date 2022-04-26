@@ -3,4 +3,6 @@ public class Welcome {
         System.out.println("Welcome to the IS 147 Movie Theater!");
         System.out.println();
     }
+
+
 }

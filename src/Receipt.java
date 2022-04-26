@@ -10,6 +10,8 @@ public class Receipt {
         Popcorn popcorn = new Popcorn(PopcornInformation.selectPopcorn());
         Drink drink = new Drink(DrinkInformation.selectDrinks());
 
+        double totalCost = 0.0;
+
         Seating.getSeating();
 
         System.out.println();
@@ -19,7 +21,11 @@ public class Receipt {
 
         System.out.println();
 
-        System.out.println(customer.getName() + ", thank you for choosing the IS 147 Theater!");
+        String thankYou = "thank you for choosing the ";
+        String IS147Theater = "IS 147 Theater!";
+
+        System.out.println(customer.getName() + ", " + thankYou.concat(IS147Theater));
+
         System.out.println();
         System.out.println("Movie: " + movie.getMovieName());
         System.out.println("Date: " + java.time.LocalDate.now());
@@ -34,7 +40,12 @@ public class Receipt {
         if (drink.getQuantity() > 0)
             System.out.println(drink.getQuantity() + " Drink(s)");
 
-        double totalCost = ticket.getCost() + popcorn.getCost() + drink.getCost();
+        if (popcorn.getCost() > 0 && drink.getCost() > 0)
+            totalCost = sum(ticket.getCost(), popcorn.getCost(), drink.getCost());
+        if (popcorn.getCost() > 0 && drink.getCost() == 0.0)
+            totalCost = sum(ticket.getCost(), popcorn.getCost());
+        if (popcorn.getCost() == 0.0 && drink.getCost() > 0)
+            totalCost = sum(ticket.getCost(), drink.getCost());
 
         System.out.println();
         System.out.printf("TOTAL: $%.2f", totalCost);
@@ -49,4 +60,14 @@ public class Receipt {
         System.out.println("*******************************************************");
 
     }
+
+    public static double sum(double x, double y, double z) {
+        return x + y + z;
+    }
+
+    public static double sum(double x, double y) {
+        return x + y;
+    }
+
 }
+

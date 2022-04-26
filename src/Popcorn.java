@@ -1,5 +1,8 @@
-public class Popcorn {
-    private int quantity;
+public class Popcorn extends Consumable {
+    public Popcorn() {
+        super();
+    }
+
     private final double POPCORN_COST = 2.00;
 
     Popcorn(int quantity) {

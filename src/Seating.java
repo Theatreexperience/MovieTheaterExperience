@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Seating {
     public static void getSeating() {
         final int NUM_ROW = 6;
@@ -10,7 +8,6 @@ public class Seating {
         int randomColumn;
 
         char[][] movieSeating = new char[NUM_ROW][NUM_COLUMN];
-        Scanner input = new Scanner(System.in);
 
         for (int i = 0; i < movieSeating.length; i++)
             for (int j = 0; j < movieSeating[i].length; j++)

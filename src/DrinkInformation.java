@@ -11,7 +11,7 @@ public class DrinkInformation {
             Scanner input = new Scanner(System.in);
             drinkQuantity = input.nextInt();
 
-            if (drinkQuantity >= 0)
+            if (drinkQuantity == 0 || drinkQuantity > 0)
                 break;
             else {
                 System.out.println("Please enter a number greater than or equal to 0!");
