@@ -1,4 +1,5 @@
 public class Popcorn extends Consumable {
+
     public Popcorn() {
         super();
     }

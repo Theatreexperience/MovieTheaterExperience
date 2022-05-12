@@ -46,6 +46,8 @@ public class Receipt {
             totalCost = sum(ticket.getCost(), popcorn.getCost());
         if (popcorn.getCost() == 0.0 && drink.getCost() > 0)
             totalCost = sum(ticket.getCost(), drink.getCost());
+        if (popcorn.getCost() == 0.0 && drink.getCost() == 0.0)
+            totalCost = ticket.getCost();
 
         System.out.println();
         System.out.printf("TOTAL: $%.2f", totalCost);
